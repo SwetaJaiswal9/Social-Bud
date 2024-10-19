@@ -1,0 +1,83 @@
+#home-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; }
+
+#feed-post {
+  flex: 2;
+  margin-right: 20px; }
+  #feed-post h4 {
+    font-size: 1.5rem;
+    color: #ff7675;
+    margin-bottom: 10px; }
+  #feed-post #new-post-form {
+    margin-bottom: 20px; }
+    #feed-post #new-post-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: none;
+      background-color: white; }
+    #feed-post #new-post-form input[type='submit'] {
+      background-color: #ff7675;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s; }
+      #feed-post #new-post-form input[type='submit']:hover {
+        background-color: #ff4342;
+        transform: translateY(-2px); }
+  #feed-post #posts-list-container ul {
+    list-style: none;
+    padding: 0; }
+    #feed-post #posts-list-container ul li {
+      padding: 15px;
+      margin-bottom: 10px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.2s ease; }
+      #feed-post #posts-list-container ul li:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); }
+
+#user-friends {
+  flex: 1;
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px; }
+  #user-friends h4 {
+    font-size: 1.5rem;
+    color: #ff7675;
+    margin-bottom: 15px; }
+  #user-friends p {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; }
+    #user-friends p:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); }
+    #user-friends p a {
+      text-decoration: none;
+      color: #ff7675;
+      font-weight: bold; }
+      #user-friends p a:hover {
+        color: #ff6f61;
+        text-decoration: underline; }
+
+@media (max-width: 768px) {
+  #home-container {
+    flex-direction: column; }
+    #home-container #feed-post {
+      margin-right: 0; }
+    #home-container #user-friends {
+      margin-top: 20px; } }

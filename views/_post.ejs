@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<li id="post-<%= post._id %>" class="post">
+  <div class="post-header">
+    <div class="post-user">
+      <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" class="post-avatar">
+      <div class="post-user-info">
+        <span class="post-user-name"><%= post.user.name %></span>
+        <span class="post-date"><%= post.createdAt.toLocaleString() %></span>
+      </div>
+    </div>
+    <% if(locals.user && locals.user.id == post.user.id){ %>
+      <a class="delete-post-button" href="posts/destroy/<%= post.id %>">&times;</a>
+    <% } %>
+  </div>
+
+  <div class="post-content">
+    <p><%= post.content %></p>
+  </div>
+
+  <div class="post-actions">
+    <% if (locals.user){ %>
+      <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+        <i class="fas fa-thumbs-up"></i> <%= post.likes.length %> Likes
+      </a>
+    <% } else { %>
+      <span><i class="fas fa-thumbs-up"></i> <%= post.likes.length %> Likes</span>
+    <% } %>
+    <a class="comment-toggle-button" href="#"><i class="fas fa-comment"></i> Comments</a>
+  </div>
+
+  <div class="post-comments">
+    <% if(locals.user) { %>
+      <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
+        <input
+          type="text"
+          name="content"
+          placeholder="Add a comment..."
+          required
+        />
+        <input type="hidden" name="post" value="<%= post._id %>" />
+        <input type="submit" value="Comment" />
+      </form>
+    <% } %>
+
+    <div class="post-comments-list">
+      <ul id="post-comments-<%= post._id %>">
+        <% for(let comment of post.comments) { %> 
+          <%- include('_comment',  { comment: comment }) %> 
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</li>

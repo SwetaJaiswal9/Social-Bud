@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>" />
+
+
+<div id="profile-container">
+  <img
+    class="profile-avatar"
+    src="<%= user.avatar %>"
+    alt="<%= user.name %>"
+    width="100"
+  />
+
+  <% if(user.id == profile_user.id){ %>
+
+  <form
+    class="profile-form"
+    action="/users/update/<%= profile_user.id %>"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    <input
+      id="name"
+      class="input-field name-input"
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      value="<%= profile_user.name %>"
+      required
+    />
+    <input
+      id="email"
+      class="input-field email-input"
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      value="<%= profile_user.email %>"
+      required
+    />
+    <input
+      id="avatar"
+      class="input-field avatar-input"
+      type="file"
+      name="avatar"
+      placeholder="Profile Picture"
+    />
+    <input
+      id="update-btn"
+      class="btn update-btn"
+      type="submit"
+      value="Update"
+    />
+  </form>
+
+  <% } else { %>
+
+  <p class="profile-name"><%= profile_user.name %></p>
+  <p class="profile-email"><%= profile_user.email %></p>
+
+  <% } %>
+</div>

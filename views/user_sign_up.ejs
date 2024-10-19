@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="<%= assetPath('css/signup.css') %>" />
+
+
+<div id="sign-up-container">
+  <div class="sign-up-form-wrapper">
+    <h1 class="sign-up-title">Sign Up</h1>
+
+    <form class="sign-up-form" action="/users/create" method="POST">
+      <input id="name" class="input-field name-input" type="text" name="name" placeholder="Your Name" required />
+      <input id="email" class="input-field email-input" type="email" name="email" placeholder="Your Email" required />
+      <input id="password" class="input-field password-input" type="password" name="password" placeholder="Password" required />
+      <input id="confirm-password" class="input-field confirm-password-input" type="password" name="confirm_password" placeholder="Confirm Password" required />
+      <input id="sign-up-btn" class="btn sign-up-btn" type="submit" value="Sign Up" />
+    </form>
+
+    <p class="google-signup-text">
+      <a class="google-signup-link" href="/users/auth/google">Google Sign In / Sign Up</a>
+    </p>
+  </div>
+</div>

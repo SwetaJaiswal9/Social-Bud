@@ -1,0 +1,127 @@
+$primary-color: #ff7675;
+$secondary-color: #ffb6b2;
+$text-color: #333;
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$accent-color: #ff6f61;
+
+#home-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#feed-post {
+  flex: 2;
+  margin-right: 20px;
+
+  h4 {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  #new-post-form {
+    margin-bottom: 20px;
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: none;
+      background-color: lighten($background-color, 5%);
+    }
+
+    input[type='submit'] {
+      background-color: $primary-color;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  #posts-list-container {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+}
+
+#user-friends {
+  flex: 1;
+  background-color: lighten($background-color, 2%);
+  padding: 20px;
+  border-radius: 8px;
+
+  h4 {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      font-weight: bold;
+
+      &:hover {
+        color: $accent-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #home-container {
+    flex-direction: column;
+
+    #feed-post {
+      margin-right: 0;
+    }
+
+    #user-friends {
+      margin-top: 20px;
+    }
+  }
+}

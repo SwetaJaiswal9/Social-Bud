@@ -1,0 +1,41 @@
+$primary-color: #ff7675;
+$secondary-color: #ffb6b2;
+$background-color: #f9f9f9;
+$text-color: #333;
+$text-color-light: #2ecc71;
+$accent-color: #ff6f61;
+$font-family: 'Roboto', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+#layout-main {
+  padding: 20px;
+  min-height: calc(100vh - 140px);
+  background-color: lighten($background-color, 5%);
+}
+
+.noty_body {
+  font-family: $font-family;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: $text-color-light !important;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  #layout-main {
+    padding: 10px;
+  }
+}

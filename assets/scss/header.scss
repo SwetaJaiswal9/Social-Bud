@@ -1,0 +1,154 @@
+$primary-color: #ff7675;
+$secondary-color: #ffb6b2;
+$button-color: #ffffff;
+$button-hover-color: #f0f0f0;
+$accent-color: #ff6f61;
+$text-color-dark: #333;
+$text-color-light: #fff;
+$header-height: 80px;
+$font-family: "Roboto", sans-serif;
+
+#layout-header {
+  background: $primary-color;
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .mini-logo {
+    a {
+      text-decoration: none;
+      font-size: 2rem;
+      color: $text-color-light;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &:hover {
+        color: lighten($text-color-light, 10%);
+      }
+    }
+  }
+
+  .auth-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-left: 20px;
+
+      a {
+        text-decoration: none;
+        color: $text-color-dark;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: $button-color;
+        transition: background-color 0.3s ease, transform 0.2s ease,
+          box-shadow 0.2s ease;
+
+        &:hover {
+          background-color: $button-hover-color;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .btn-sign-in,
+      .btn-sign-up {
+        background-color: $button-color;
+        color: $text-color-dark;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $button-hover-color;
+          color: $text-color-dark;
+          transform: translateY(-2px);
+        }
+      }
+
+      .btn-auth-user {
+        background-color: $primary-color;
+        color: $button-color;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        transition: all 0.3s ease;
+
+        .user-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          object-fit: cover;
+          background-color: $button-hover-color;
+        }
+
+        &:hover {
+          background-color: $primary-color;
+          // color: $button-color;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .fa-user-circle:before {
+          content: "\f2bd";
+          color: #3498db;
+          font-size: 55px;
+      }
+
+      .btn-sign-out {
+        background-color: $primary-color;
+        color: $button-color;
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: 1px solid $button-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: darken($primary-color, 5%);
+          color: $button-color;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 768px) {
+  #layout-header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+
+    .auth-links ul {
+      flex-direction: column;
+      li {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

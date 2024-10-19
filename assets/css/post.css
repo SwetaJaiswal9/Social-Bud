@@ -1,0 +1,111 @@
+.post {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  .post .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .post .post-header .post-user {
+      display: flex;
+      align-items: center; }
+      .post .post-header .post-user .post-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px; }
+      .post .post-header .post-user .post-user-info {
+        display: flex;
+        flex-direction: column; }
+        .post .post-header .post-user .post-user-info .post-user-name {
+          font-weight: bold;
+          color: #333; }
+        .post .post-header .post-user .post-user-info .post-date {
+          font-size: 0.85rem;
+          color: gray; }
+    .post .post-header .delete-post-button {
+      color: #e74c3c;
+      font-size: 1.5rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease; }
+      .post .post-header .delete-post-button:hover {
+        color: #d62c1a; }
+  .post .post-content {
+    margin-top: 15px; }
+    .post .post-content p {
+      font-size: 1.1rem;
+      color: #333; }
+  .post .post-actions {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px; }
+    .post .post-actions a,
+    .post .post-actions span {
+      font-size: 1rem;
+      color: #3498db;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: color 0.3s ease; }
+      .post .post-actions a i,
+      .post .post-actions span i {
+        margin-right: 5px; }
+      .post .post-actions a:hover,
+      .post .post-actions span:hover {
+        color: #217dbb; }
+  .post .post-comments {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px; }
+    .post .post-comments form {
+      display: flex;
+      align-items: center; }
+      .post .post-comments form input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: border-color 0.3s ease; }
+        .post .post-comments form input[type="text"]:focus {
+          border-color: #3498db; }
+      .post .post-comments form input[type="submit"] {
+        background-color: #2ecc71;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease; }
+        .post .post-comments form input[type="submit"]:hover {
+          background-color: #25a25a;
+          transform: translateY(-2px); }
+    .post .post-comments .post-comments-list {
+      margin-top: 15px; }
+      .post .post-comments .post-comments-list ul {
+        list-style: none;
+        padding-left: 0; }
+        .post .post-comments .post-comments-list ul li {
+          padding: 10px;
+          border: 1px solid #ddd;
+          background-color: #f9f9f9;
+          margin-top: 10px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease; }
+          .post .post-comments .post-comments-list ul li:hover {
+            background-color: white; }
+
+.toggle-like-button {
+  cursor: pointer;
+  color: #3498db;
+  font-weight: bold;
+  transition: color 0.3s ease; }
+  .toggle-like-button:hover {
+    color: #217dbb; }

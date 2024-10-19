@@ -1,0 +1,31 @@
+<li id="comment-<%= comment._id %>" class="comment">
+  <div class="comment-header">
+    <img src="<%= comment.user.avatar ? '/uploads/avatars/' + comment.user.avatar : '/images/default-avatar.png' %>" alt="<%= comment.user.name %>" class="comment-avatar">
+    
+    <div class="comment-body">
+      <p>
+        <%= comment.content %>
+        <!-- <%= comment.user %> -->
+        <br />
+
+        <span class="comment-user-name"><%= comment.user.name %></span>
+        <% if (locals.user && locals.user.id == comment.user.id) { %>
+          <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>">&times;</a>
+        <% } %>
+
+      </p>
+
+      <div class="comment-actions">
+        <small>
+          <% if (locals.user) { %>
+            <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%= comment._id %>&type=Comment">
+              <i class="fas fa-thumbs-up"></i> <%= comment.likes.length %> Likes
+            </a>
+          <% } else { %>
+            <span><i class="fas fa-thumbs-up"></i> <%= comment.likes.length %> Likes</span>
+          <% } %>
+        </small>
+      </div>
+    </div>
+  </div>
+</li>

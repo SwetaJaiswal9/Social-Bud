@@ -1,0 +1,57 @@
+#profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  #profile-container .profile-avatar {
+    border-radius: 50%;
+    margin-bottom: 20px; }
+  #profile-container .profile-form {
+    width: 100%;
+    max-width: 500px; }
+    #profile-container .profile-form .input-field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      background-color: white;
+      transition: border-color 0.3s ease, background-color 0.3s ease; }
+      #profile-container .profile-form .input-field:focus {
+        border-color: #ff7675;
+        background-color: white; }
+    #profile-container .profile-form .avatar-input {
+      margin-bottom: 15px; }
+    #profile-container .profile-form .update-btn {
+      background-color: #ff7675;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+      #profile-container .profile-form .update-btn:hover {
+        background-color: #ff6f61;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); }
+      #profile-container .profile-form .update-btn:active {
+        background-color: #ff8f8f;
+        transform: translateY(0);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); }
+  #profile-container .profile-name, #profile-container .profile-email {
+    color: #333;
+    margin-bottom: 10px; }
+
+@media (max-width: 768px) {
+  #profile-container {
+    padding: 10px; }
+    #profile-container .profile-form .input-field {
+      padding: 8px; } }
